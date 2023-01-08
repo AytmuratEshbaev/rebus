@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .image {
+        width: 510px;
+        height: 510px;
+        margin: 30px auto;
+        border: 1px solid red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: contain;
+    }
+    h1{
+        text-align: center;
+        font-size: 40px;
+    }
+    .image img {
+        width: 300px;
+    }
+</style>
+
+<body>
+    <div id="wrapper">
+
+    </div>
+
+    <script>
+        let wrapper = document.getElementById("wrapper");
+
+        for(let i = 1;i<212;i++){
+            let image = document.createElement("div");
+            let h1 = document.createElement('h1');
+            h1.textContent = `${i}`;
+            image.className = 'image';
+            let img = document.createElement("img");
+            img.setAttribute('src',`./img/${i}.png`);
+            image.style.backgroundImage = `url(./blobs/blob${i % 20 + 1}.svg)`;
+            image.appendChild(img);
+            wrapper.appendChild(h1);
+            wrapper.appendChild(image);
+        }
+    </script>
+</body>
+
+</html>
